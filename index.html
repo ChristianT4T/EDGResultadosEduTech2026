@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team4Tech Resultados grupos focales EDG</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#006d86;--teal-dark:#004d5e;--gray:#555;--yellow:#f6db52;
+  --olive:#b5bb51;--magenta:#b50544;--orange:#d86c27;--cream:#e3d8c8;
+  --cream-light:#f5f0e8;--white:#fff;
+  --ca:#006d86;--ce:#b5bb51;--cc:#d86c27;--cl:#b50544;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;color:var(--gray);background:#fff;line-height:1.7;}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;}
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.fi{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
+.fi.vis{opacity:1;transform:none;}
+.uy{border-bottom:4px solid var(--yellow);display:inline-block;padding-bottom:2px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--teal-dark);padding:10px 0;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+nav .ni{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:0 24px;}
+.nlogo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;text-decoration:none;}
+.nlogo span{color:var(--yellow);}
+.nlinks{display:flex;gap:16px;list-style:none;}
+.nlinks a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.75rem;font-family:'Montserrat',sans-serif;font-weight:600;transition:color .2s;}
+.nlinks a:hover{color:var(--yellow);}
+
+/* BANNER */
+.banner{background:#1a1a2e;padding:11px 0;text-align:center;}
+.banner p{font-family:'Montserrat',sans-serif;font-size:.74rem;color:var(--yellow);}
+.banner strong{color:#fff;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));min-height:460px;display:flex;align-items:center;position:relative;overflow:hidden;padding:56px 0;}
+.hcircles{position:absolute;inset:0;pointer-events:none;}
+.hcircles span{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.07);}
+.hcircles span:nth-child(1){width:280px;height:280px;top:-60px;right:-40px;}
+.hcircles span:nth-child(2){width:160px;height:160px;bottom:-25px;left:-25px;}
+.hcircles span:nth-child(3){width:110px;height:110px;top:44%;right:24%;}
+.hero-ct{position:relative;z-index:2;color:#fff;}
+.hero-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.45rem;margin-bottom:5px;}
+.hero-logo span{color:var(--yellow);}
+.hero-ey{font-size:.73rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:9px;}
+.hero h1{font-size:2.5rem;font-weight:800;line-height:1.14;margin-bottom:16px;}
+.hero-q{background:rgba(255,255,255,.12);border-left:4px solid var(--yellow);padding:13px 17px;border-radius:0 11px 11px 0;margin-bottom:24px;font-style:italic;font-size:.98rem;color:rgba(255,255,255,.92);}
+.metrics{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:26px;}
+.metric .mn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.8rem;color:var(--yellow);display:block;}
+.metric .ml{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.65);}
+.btn-p{background:var(--yellow);color:var(--teal-dark);font-family:'Montserrat',sans-serif;font-weight:700;border:none;padding:12px 26px;border-radius:25px;cursor:pointer;font-size:.88rem;transition:transform .2s,box-shadow .2s;}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.2);}
+
+section{padding:62px 0;}
+.stitle{font-size:1.6rem;font-weight:700;color:var(--teal);margin-bottom:6px;}
+.ssub{color:var(--gray);font-size:.9rem;margin-bottom:34px;}
+.bgcream{background:var(--cream-light);}
+
+/* FLUJO */
+.flujo{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:32px;}
+.fs{background:#fff;border-radius:11px;padding:11px 13px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.74rem;color:var(--teal);box-shadow:0 2px 9px rgba(0,0,0,.08);flex:1;min-width:75px;}
+.fs small{display:block;font-weight:300;font-size:.64rem;color:var(--gray);margin-top:2px;}
+.fa{color:var(--teal);font-size:1rem;padding:0 2px;}
+.acc-item{border:1px solid rgba(0,109,134,.14);border-radius:11px;margin-bottom:7px;overflow:hidden;}
+.acc-h{background:#fff;padding:13px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.86rem;color:var(--teal);}
+.acc-h:hover{background:rgba(0,109,134,.04);}
+.acc-b{display:none;padding:13px 16px;font-size:.84rem;border-top:1px solid rgba(0,109,134,.09);}
+.acc-b.open{display:block;}
+
+/* TABS */
+.tabs{display:flex;gap:7px;margin-bottom:20px;flex-wrap:wrap;}
+.tb{padding:8px 16px;border-radius:25px;border:2px solid transparent;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.78rem;cursor:pointer;background:#fff;transition:all .2s;}
+.tb[data-p="alumnos"]{color:var(--ca);border-color:var(--ca);}
+.tb[data-p="educadores"]{color:var(--ce);border-color:var(--ce);}
+.tb[data-p="coordinadores"]{color:var(--cc);border-color:var(--cc);}
+.tb[data-p="liderazgos"]{color:var(--cl);border-color:var(--cl);}
+.tb.active[data-p="alumnos"]{background:var(--ca);color:#fff;}
+.tb.active[data-p="educadores"]{background:var(--ce);color:#fff;}
+.tb.active[data-p="coordinadores"]{background:var(--cc);color:#fff;}
+.tb.active[data-p="liderazgos"]{background:var(--cl);color:#fff;}
+.tab-p{display:none;}
+.tab-p.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:20px;}
+.gc{background:#fff;border-radius:15px;padding:24px;box-shadow:0 3px 16px rgba(0,0,0,.08);transition:transform .25s,box-shadow .25s;}
+.gc:hover{transform:translateY(-5px);box-shadow:0 7px 26px rgba(0,0,0,.12);}
+.gtag{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:11px;padding:3px 10px;border-radius:18px;display:inline-block;color:#fff;}
+.gs h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-family:'Montserrat',sans-serif;font-weight:600;}
+.gs ul{list-style:none;margin-bottom:12px;}
+.gs ul li{font-size:.81rem;padding:2px 0 2px 12px;position:relative;}
+.gs ul li::before{content:"–";position:absolute;left:0;}
+.cta{border-left:4px solid;border-radius:0 7px 7px 0;padding:8px 12px;margin:6px 0;background:rgba(0,0,0,.025);font-style:italic;font-size:.78rem;}
+.cta .cs{display:block;font-style:normal;font-size:.68rem;margin-top:2px;font-family:'Montserrat',sans-serif;font-weight:600;opacity:.7;}
+
+/* CONSTRUCTOS */
+#cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:20px;}
+.cc{background:#fff;border-radius:15px;padding:22px;box-shadow:0 3px 16px rgba(0,0,0,.07);transition:transform .25s;}
+.cc:hover{transform:translateY(-4px);}
+.cc-ico{font-size:1.8rem;margin-bottom:7px;}
+.cc-nm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;color:var(--teal);margin-bottom:6px;}
+.cc-meta{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap;}
+.cc-badge{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;}
+.b100{background:var(--teal);color:#fff;}
+.b75{background:var(--orange);color:#fff;}
+.b50{background:var(--gray);color:#fff;}
+.cc-freq{font-family:'Montserrat',sans-serif;font-size:.68rem;color:var(--gray);}
+.cc-def{font-size:.8rem;color:var(--gray);margin-bottom:10px;line-height:1.6;}
+.cc-cita{font-style:italic;font-size:.76rem;border-left:3px solid var(--teal);padding:5px 8px;margin-bottom:4px;background:rgba(0,109,134,.04);border-radius:0 5px 5px 0;}
+.cc-cita .cs{font-style:normal;font-size:.67rem;font-family:'Montserrat',sans-serif;font-weight:600;color:var(--teal);display:block;margin-top:2px;}
+.pdots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:9px;margin-bottom:10px;}
+.pdots span{display:flex;align-items:center;gap:3px;font-size:.68rem;font-family:'Montserrat',sans-serif;font-weight:600;}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+.dot.off{background:#ddd;}
+.cite-btn{width:100%;background:none;border:1.5px solid var(--teal);color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:.72rem;padding:6px 12px;border-radius:18px;cursor:pointer;transition:all .2s;}
+.cite-btn:hover,.cite-btn.open{background:var(--teal);color:#fff;}
+.all-q{display:none;margin-top:10px;border-top:1px solid rgba(0,109,134,.1);padding-top:10px;}
+.all-q.open{display:block;}
+.aq{font-style:italic;font-size:.75rem;border-left:2px solid;padding:5px 9px;margin-bottom:5px;border-radius:0 4px 4px 0;background:rgba(0,0,0,.02);line-height:1.55;}
+.aq .aqg{display:block;font-style:normal;font-size:.66rem;font-family:'Montserrat',sans-serif;font-weight:700;margin-top:2px;}
+
+/* GRÁFICAS */
+.gr2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media(max-width:768px){.gr2{grid-template-columns:1fr;}}
+.ch{background:#fff;border-radius:15px;padding:24px;box-shadow:0 3px 16px rgba(0,0,0,.07);}
+.ch-t{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;color:var(--teal);margin-bottom:14px;}
+.br{margin-bottom:9px;}
+.br-l{font-size:.71rem;font-family:'Montserrat',sans-serif;font-weight:600;color:var(--gray);margin-bottom:3px;display:flex;justify-content:space-between;}
+.br-t{background:#eee;border-radius:7px;height:17px;overflow:hidden;}
+.br-f{height:100%;border-radius:7px;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;padding-left:6px;}
+.br-f span{font-size:.65rem;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;}
+/* consensus dots chart */
+.cs-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f0f0f0;}
+.cs-nm{font-size:.74rem;font-family:'Montserrat',sans-serif;font-weight:600;color:var(--gray);flex:1;}
+.cs-ds{display:flex;gap:4px;}
+.cd{width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;flex-shrink:0;}
+.cd.off{background:#ddd;color:#aaa;}
+.cs-pct{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;width:40px;text-align:right;}
+
+/* COINCIDENCIAS */
+.cc2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;}
+@media(max-width:768px){.cc2{grid-template-columns:1fr;}}
+.cn{background:#fff;border-radius:15px;padding:22px;box-shadow:0 3px 16px rgba(0,0,0,.07);}
+.cn h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:12px;}
+.cnl{list-style:none;}
+.cnl li{padding:6px 0;border-bottom:1px solid #f5f5f5;font-size:.81rem;display:flex;gap:7px;align-items:flex-start;}
+.cnl li::before{content:"✓";color:var(--olive);font-weight:700;flex-shrink:0;}
+.dfl li::before{content:"◆";color:var(--orange);font-size:.66rem;margin-top:4px;}
+.ten-b{background:var(--teal-dark);border-radius:15px;padding:24px;color:#fff;}
+.ten-b h3{font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:12px;font-size:.92rem;}
+.ti{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.ti:last-child{border:none;}
+.ti-l{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.78rem;color:var(--yellow);margin-bottom:3px;}
+.ti-d{font-size:.78rem;color:rgba(255,255,255,.8);}
+
+/* MATRIZ */
+.mx-w{overflow-x:auto;}
+table.mx{width:100%;border-collapse:collapse;font-size:.78rem;}
+table.mx th{background:var(--teal-dark);color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;padding:8px 11px;text-align:left;font-size:.76rem;}
+table.mx td{padding:8px 11px;border-bottom:1px solid #f0f0f0;vertical-align:middle;}
+table.mx tr:hover td{background:rgba(0,109,134,.04);}
+.ck{padding:3px 8px;border-radius:6px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;display:inline-block;}
+.cx{background:#e8e8e8;color:#aaa;padding:3px 8px;border-radius:6px;font-size:.7rem;display:inline-block;}
+.bt{background:var(--teal);color:#fff;padding:2px 8px;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;}
+.bh{background:var(--olive);color:#fff;padding:2px 8px;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;}
+.bp{background:var(--orange);color:#fff;padding:2px 8px;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;}
+.be{background:var(--gray);color:#fff;padding:2px 8px;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;}
+.cnc{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.78rem;color:var(--teal);}
+
+/* SEÑALES */
+.sd-hdr{background:var(--cream);border-radius:14px;padding:18px 22px;margin-bottom:24px;border-left:5px solid var(--olive);}
+.sd-hdr p{font-size:.85rem;}
+#sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.sdc{background:#fff;border-radius:13px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-top:3px solid var(--olive);transition:transform .2s;}
+.sdc:hover{transform:translateY(-3px);}
+.sdi{font-size:1.6rem;margin-bottom:6px;}
+.sdn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;color:var(--teal-dark);margin-bottom:5px;}
+.sdd{font-size:.78rem;color:var(--gray);margin-bottom:8px;line-height:1.6;}
+.sdq{font-style:italic;font-size:.74rem;border-left:2px solid var(--olive);padding:4px 8px;margin-bottom:5px;background:rgba(181,187,81,.07);border-radius:0 4px 4px 0;}
+.sdq .cs{font-style:normal;font-size:.66rem;font-family:'Montserrat',sans-serif;font-weight:600;color:#666;display:block;margin-top:2px;}
+.sdw{background:rgba(246,219,82,.15);border-radius:7px;padding:7px 11px;font-size:.74rem;margin-top:8px;}
+.sdw strong{font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--orange);}
+.sdgs{display:flex;gap:3px;flex-wrap:wrap;margin-top:7px;}
+.sg-tag{font-size:.64rem;padding:2px 7px;border-radius:9px;font-family:'Montserrat',sans-serif;font-weight:600;background:rgba(0,109,134,.1);color:var(--teal);}
+
+/* DISCUSIÓN */
+.fsteps{display:flex;border-radius:13px;overflow:hidden;flex-wrap:wrap;margin-bottom:32px;}
+.fst{flex:1;padding:15px 13px;text-align:center;min-width:110px;}
+.fst:nth-child(1){background:var(--teal);}
+.fst:nth-child(2){background:var(--teal-dark);}
+.fst:nth-child(3){background:#003d50;}
+.fst:nth-child(4){background:#002230;}
+.fstn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.6rem;color:var(--yellow);}
+.fstnm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:#fff;margin-bottom:1px;}
+.fstt{font-size:.68rem;color:rgba(255,255,255,.6);}
+.pq{background:#fff;border-radius:13px;margin-bottom:12px;box-shadow:0 3px 11px rgba(0,0,0,.07);overflow:hidden;}
+.pqh{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.pqh:hover{background:rgba(0,109,134,.03);}
+.pqn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:var(--teal);flex-shrink:0;}
+.pqt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;color:var(--teal);}
+.pqc{font-size:.7rem;color:var(--gray);margin-top:2px;}
+.pqa{font-size:1rem;color:var(--teal);transition:transform .3s;}
+.pqa.open{transform:rotate(180deg);}
+.pqb{display:none;padding:0 20px 20px;}
+.pqb.open{display:block;}
+.pqtxt{background:rgba(0,109,134,.06);border-left:4px solid var(--teal);padding:12px 15px;border-radius:0 8px 8px 0;font-size:.86rem;margin-bottom:11px;font-style:italic;}
+.pista{background:#fff7e6;border:1px solid var(--yellow);border-radius:8px;padding:9px 13px;font-size:.77rem;margin-bottom:11px;}
+.pista strong{color:var(--orange);}
+.nota-a{width:100%;border:1px solid #ddd;border-radius:8px;padding:9px;font-family:'Open Sans',sans-serif;font-size:.82rem;min-height:68px;resize:vertical;}
+.nota-a:focus{outline:2px solid var(--teal);}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px;}
+.cf label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.7rem;color:var(--teal);display:block;margin-bottom:3px;}
+.cf input{border:1px solid #ddd;border-radius:7px;padding:7px 10px;font-family:'Open Sans',sans-serif;font-size:.8rem;width:100%;}
+.cf input:focus{outline:2px solid var(--teal);}
+
+/* NOTA */
+.nota-box{background:var(--cream-light);border-left:6px solid var(--olive);border-radius:0 13px 13px 0;padding:24px 28px;}
+.nota-box p{font-size:.86rem;margin-bottom:9px;line-height:1.8;}
+.nota-ci{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);font-size:.95rem;margin-top:12px!important;border-top:2px dashed var(--olive);padding-top:11px;}
+
+/* FOOTER */
+footer{background:var(--teal-dark);color:#fff;padding:34px 0;text-align:center;}
+.fl{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:5px;}
+.fl span{color:var(--yellow);}
+footer p{font-size:.78rem;color:rgba(255,255,255,.6);}
+footer a{color:var(--yellow);text-decoration:none;}
+
+@media(max-width:768px){
+  .hero h1{font-size:1.8rem;}
+  .nlinks{display:none;}
+  .cc2,.gr2{grid-template-columns:1fr;}
+  .fsteps{flex-direction:column;}
+  .cform{grid-template-columns:1fr;}
+  .flujo .fa{display:none;}
+}
+@media print{
+  nav,.btn-p,.banner{display:none!important;}
+  .all-q,.acc-b,.tab-p,.pqb{display:block!important;}
+  .tab-p{display:grid!important;}
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  section{padding:24px 0;}
+  .gr2,.cc2{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+
+
+<nav>
+  <div class="ni">
+    <a href="#hero" class="nlogo">Team<span>4</span>Tech</a>
+    <ul class="nlinks">
+      <li><a href="#metod">Método</a></li>
+      <li><a href="#grupos">Grupos</a></li>
+      <li><a href="#const">Constructos</a></li>
+      <li><a href="#graf">Gráficas</a></li>
+      <li><a href="#anal">Análisis</a></li>
+      <li><a href="#matriz">Matriz</a></li>
+      <li><a href="#senales">Señales</a></li>
+      <li><a href="#disc">Discusión</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hcircles"><span></span><span></span><span></span></div>
+  <div class="container">
+    <div class="hero-ct">
+      <div class="hero-logo">Team<span>4</span>Tech · El Directorio Guatemala</div>
+      <p class="hero-ey">Análisis de Grupos Focales</p>
+      <h1>Voces de participantes</h1>
+      <div class="hero-q">"¿Cuáles son los intereses, obstáculos y oportunidades para integrar tecnología educativa en tu contexto?"</div>
+      <div class="metrics">
+        <div class="metric"><span class="mn">6</span><span class="ml">Grupos</span></div>
+        <div class="metric"><span class="mn">4</span><span class="ml">Perspectivas</span></div>
+        <div class="metric"><span class="mn">9</span><span class="ml">Constructos</span></div>
+        <div class="metric"><span class="mn">133</span><span class="ml">Menciones</span></div>
+        
+      </div>
+      <button class="btn-p" onclick="window.print()">⬇ Exportar informe PDF</button>
+    </div>
+  </div>
+</section>
+
+<section class="bgcream" id="metod">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Metodología</span></h2>
+  <p class="ssub fi">6 grupos · 4 perspectivas independientes: Coordinadores · Liderazgos · Educadores · Alumnos</p>
+  <div class="flujo fi">
+    <div class="fs">Recolección<small>Grupos focales</small></div><div class="fa">→</div>
+    <div class="fs">Transcripción<small>Fireflies.ai</small></div><div class="fa">→</div>
+    <div class="fs">Análisis<small>Claude.ai</small></div><div class="fa">→</div>
+    <div class="fs">Codificación<small>Análisis temático</small></div><div class="fa">→</div>
+    <div class="fs">Cuantificación<small>Freq × Consenso</small></div><div class="fa">→</div>
+    <div class="fs">Validación<small>Equipo Team4Tech</small></div><div class="fa">→</div>
+    <div class="fs">Decisión<small>Ustedes</small></div>
+  </div>
+  <div class="fi">
+
+      <div class="acc-item"><div class="acc-h" onclick="toggleAcc(this)">¿Qué es el análisis temático? <span>▾</span></div>
+      <div class="acc-b">Es un método cualitativo que organiza las voces en temas a partir de su frecuencia y peso en el discurso. No mide certeza estadística, sino patrones de énfasis: qué preocupa más, a quiénes, y dónde hay acuerdo o divergencia entre perspectivas.</div>
+    </div>
+    <div class="acc-item"><div class="acc-h" onclick="toggleAcc(this)">¿Qué es un constructo analítico? <span>▾</span></div>
+      <div class="acc-b">Un constructo va más allá de describir lo que la gente dijo. Nombra la fuerza que está en juego. Por ejemplo, no dice "falta capacitación" sino "Analfabetismo Digital Docente" para identificar la naturaleza sistémica del problema.</div>
+    </div>    
+<div class="acc-item"><div class="acc-h" onclick="toggleAcc(this)">Grupos y perspectivas identificados <span>▾</span></div>
+    <div class="acc-b">
+      <b style="color:var(--cc)">G1 · Coordinadores</b> — Profesionales que coordinan intervenciones tecnológicas en redes de escuelas rurales. Operan a nivel meso-sistémico: gestionan relaciones entre organizaciones, comunidades y Estado, supervisan a educadores de campo y tienen visión de ecosistema. Su preocupación central es la escala, la política y la urgencia ante la IA.<br><br>
+      <b style="color:var(--cl)">G6 · Liderazgos</b> — Líderes directivos de escuelas que atienden estudiantes de escasos recursos y coordinadores de programas de becas para nivel diversificado. Están en la bisagra entre la organización y el aula: toman decisiones de adopción tecnológica escolar, gestionan donantes y ven directamente el impacto de la brecha económica familiar en el acceso.<br><br>
+      <b style="color:var(--ce)">G2 · Educadores</b> —  Docentes y facilitadores en proceso activo de autoformación tecnológica, que trabajan con jóvenes en contextos de alta vulnerabilidad. Han experimentado directamente la contradicción de tener dispositivos donados sin infraestructura básica (luz, internet). Exploran usos no convencionales de la tecnología: salud mental, seguridad digital.<br>
+      <b style="color:var(--ce)">G3 · Educadores</b> — Educadores que trabajan en comunidades de alta ruralidad y pobreza extrema, incluyendo a estudiantes con discapacidad. Se autodefinen como "analfabetos en tecnología" y enfrentan obstáculos físicos severos (sin electricidad, acceso en moto). Son el grupo con mayor brecha entre intención y condiciones reales.<br><br>
+      <b style="color:var(--ca)">G4 · Alumnos</b> — Estudiantes jóvenes de comunidades rurales que participan simultáneamente en la escuela formal y en organizaciones educativas. Viven la contradicción curricular en carne propia: formación obsoleta en la escuela vs. formación práctica en la organización. Articulan demandas concretas de autonomía y de acceso como derecho.<br>
+      <b style="color:var(--ca)">G5 · Alumnos</b> — Jóvenes con discapacidad —principalmente visual— con enfoque explícito en la inserción laboral. Enfrentan una doble exclusión: la brecha económica general y el costo prohibitivo de la tecnología accesible. Son el único grupo que nombra la IA desde la perspectiva de la accesibilidad, no de la amenaza.
+    </div></div>
+    <div class="acc-item"><div class="acc-h" onclick="toggleAcc(this)">¿Qué significa el nivel de consenso con 4 perspectivas? <span>▾</span></div>
+    <div class="acc-b">Con cuatro perspectivas independientes: <b>100%</b> = las 4 coinciden (Coord + Lid + Educ + Alum) · <b>75%</b> = 3 de 4 · <b>50%</b> = 2 de 4 · <b>25%</b> = solo 1. Separar Coordinadores de Liderazgos hace más exigente el umbral de consenso y permite identificar con mayor precisión qué dinámicas son verdaderamente transversales al ecosistema.</div></div>
+    <div class="acc-item"><div class="acc-h" onclick="toggleAcc(this)">¿Cómo se calculan las frecuencias? <span>▾</span></div>
+    <div class="acc-b">Cada mención directa o parafraseada de un constructo en el discurso suma un punto. En la sección "Ver todas las citas" de cada constructo se pueden consultar todas las citas textuales que generaron ese conteo. Las frecuencias son conteos cualitativos, no estadísticos.</div></div>
+  </div>
+</div>
+</section>
+
+<section id="grupos">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Lo que dijo cada grupo</span></h2>
+  <p class="ssub fi">4 perspectivas separadas · haz clic en cada pestaña para explorar intereses, obstáculos y oportunidades</p>
+  <div class="tabs fi">
+    <button class="tb active" data-p="coordinadores" onclick="switchTab('coordinadores')">📋 Coordinadores</button>
+    <button class="tb" data-p="liderazgos" onclick="switchTab('liderazgos')">🌱 Liderazgos</button>
+    <button class="tb" data-p="educadores" onclick="switchTab('educadores')">👩‍🏫 Educadores</button>
+    <button class="tb" data-p="alumnos" onclick="switchTab('alumnos')">🎓 Alumnos</button>
+  </div>
+
+  <div class="tab-p active" id="tab-coordinadores">
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--cc)">G1 · Coordinadores</span>
+      <div class="gs"><h4 style="color:var(--cc)">🎯 Intereses</h4><ul>
+        <li>Fortalecer redes comunitarias para llevar tecnología y energía solar</li>
+        <li>Capacitar a mujeres y jóvenes en idiomas originarios</li>
+        <li>Codiseñar currícula básica de IA con fellows educadores</li>
+        <li>Sostenibilidad de centros comunitarios digitales</li>
+        <li>Coordinación con el Estado para infraestructura y políticas</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--cc)">🚧 Obstáculos</h4><ul>
+        <li>Calidad y acceso a internet rural (Santiago Titlán, Chajul, Lago Atitlán)</li>
+        <li>Docentes sin competencias básicas (contraseñas, Google Forms, correo)</li>
+        <li>Resistencia docente: "para qué aprender algo nuevo si siempre funcionó igual"</li>
+        <li>Sostenibilidad del conocimiento: referentes que migran o se van</li>
+        <li>Equipos entregados por el ministerio sin usar, engavetados</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--cc)">🌱 Oportunidades</h4><ul>
+        <li>Internet satelital (Starlink, Amazon) para áreas remotas</li>
+        <li>30 centros comunitarios digitales en Alta Verapaz, Huehue, Quiché</li>
+        <li>Fellows pilas como codiseñadores de currícula de IA</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--cc)">"Hay que actuar rápido porque esto va más rápido que la luz." <span class="cs">G1 · Coordinadores</span></div>
+      <div class="cta" style="border-color:var(--cc)">"Hay escuelas que tienen equipo y no tienen Internet, hay escuelas que tienen equipo y no tienen luz inclusive." <span class="cs">G1 · Coordinadores</span></div>
+    </div>
+  </div>
+
+  <div class="tab-p" id="tab-liderazgos">
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--cl)">G6 · Liderazgos</span>
+      <div class="gs"><h4 style="color:var(--cl)">🎯 Intereses</h4><ul>
+        <li>Inserción laboral de becados con habilidades tecnológicas sólidas</li>
+        <li>Capacitación docente urgente para trabajar herramientas de tecnología</li>
+        <li>Aprovechar las plataformas digitales instaladas desde la pandemia</li>
+        <li>Alianzas estratégicas</li>
+        <li>Concientizar a padres sobre el valor de la tecnología</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--cl)">🚧 Obstáculos</h4><ul>
+        <li>Brecha económica y cultural familiar: padres sin educación ni recursos</li>
+        <li>Escuelas nacionales con muy poca o cero tecnología</li>
+        <li>Retroceso post-pandemia: escuelas que volvieron a la "normalidad"</li>
+        <li>Planes del Ministerio de Educación poco realistas</li>
+        <li>Jóvenes que priorizan recargas de celular sobre alimentación</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--cl)">🌱 Oportunidades</h4><ul>
+        <li>Cuando papás comprenden el valor de la tecnología, invierten</li>
+        <li>Apps offline reducen barrera de conectividad</li>
+        <li>Pandemia como precedente de adopción de plataformas digitales</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--cl)">"A la hora de que el papá y la mamá comprenda que va a ser una herramienta básica, ella misma va a decir: sí voy a ayudar a mi hijo." <span class="cs">G6 · Liderazgos</span></div>
+      <div class="cta" style="border-color:var(--cl)">"Muchas escuelas retrocedieron; en vez de seguir avanzando, se volvió a la normalidad y dejaron la tecnología a un lado." <span class="cs">G6 · Liderazgos</span></div>
+    </div>
+  </div>
+
+  <div class="tab-p" id="tab-educadores">
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--ce);color:#333">G2 · Educadores (Guatemala &amp; El Salvador)</span>
+      <div class="gs"><h4 style="color:#7a7e2b">🎯 Intereses</h4><ul>
+        <li>Autoformarse para orientar a estudiantes ante la tecnología</li>
+        <li>Facilitar trabajo colaborativo en línea (sin memorias físicas)</li>
+        <li>Plataformas de salud mental con mejor respuesta juvenil</li>
+        <li>Educación en seguridad digital para jóvenes y familias</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:#7a7e2b">🚧 Obstáculos</h4><ul>
+        <li>Docentes mayores sin competencias; sistema no está diseñado para capacitar</li>
+        <li>Eliminación de profesorados universitarios en El Salvador</li>
+        <li>Falta de electricidad, internet y dispositivos combinada</li>
+        <li>Seguridad física de equipos en comunidades vulnerables</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:#7a7e2b">🌱 Oportunidades</h4><ul>
+        <li>Plataformas de salud mental aceptadas donde la atención presencial tiene estigma</li>
+        <li>Seguridad en línea como contenido pedagógico concreto</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--ce)">"Aprenden a jugar, muchas cosas, pero algo útil para la vida yo siento que no está pasando." <span class="cs">G2 · Educadores</span></div>
+      <div class="cta" style="border-color:var(--ce)">"Interactuar con una plataforma de salud mental tuvimos mejor respuesta que ir al psicólogo." <span class="cs">G2 · Educadores</span></div>
+    </div>
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--ce);color:#333">G3 · Educadores (Quiché, discapacidad)</span>
+      <div class="gs"><h4 style="color:#7a7e2b">🎯 Intereses</h4><ul>
+        <li>Autoformarse y transmitir conocimientos digitales a estudiantes</li>
+        <li>Incorporar lectores y ampliadores de pantalla para accesibilidad</li>
+        <li>Fortalecer la voluntad docente como factor determinante</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:#7a7e2b">🚧 Obstáculos</h4><ul>
+        <li>Resistencia de maestros próximos a jubilación</li>
+        <li>Docentes que desconocen Drive, enlaces, conceptos básicos</li>
+        <li>Pocas computadoras; niños que no saben encenderlas</li>
+        <li>Docentes excluyen a estudiantes con discapacidad de procesos tecnológicos</li>
+        <li>Responsabilidad sobre equipos como disuasor ("si llueve el polvo se me cae")</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:#7a7e2b">🌱 Oportunidades</h4><ul>
+        <li>Celular presente incluso en comunidades de alta pobreza</li>
+        <li>Con buena orientación, el celular puede ser punto de entrada</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--ce)">"Somos analfabetos en tecnología; hay tantos programas gratuitos pero desconocemos cómo se usan." <span class="cs">G3 · Educadores</span></div>
+      <div class="cta" style="border-color:var(--ce)">"Los docentes han dejado fuera a nuestros estudiantes con discapacidad de todos los procesos de tecnología." <span class="cs">G3 · Educadores</span></div>
+    </div>
+  </div>
+
+  <div class="tab-p" id="tab-alumnos">
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--ca)">G4 · Alumnos (comunidades rurales)</span>
+      <div class="gs"><h4 style="color:var(--ca)">🎯 Intereses</h4><ul>
+        <li>Acceso a tecnología en el área rural como derecho</li>
+        <li>Competencias para el autoaprendizaje con recursos disponibles</li>
+        <li>Libertad para explorar tecnología según sus propias necesidades</li>
+        <li>Robótica educativa para fomentar mentalidad emprendedora</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--ca)">🚧 Obstáculos</h4><ul>
+        <li>Sin electricidad ni internet en Chajul y otras comunidades</li>
+        <li>Profesor que no usa tecnología y por ende no puede enseñarla</li>
+        <li>CNB obsoleto: informativo, no formativo</li>
+        <li>Solo 10 computadoras para 30 niños</li>
+        <li>Recursos educativos que requieren internet cuando no hay</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--ca)">🌱 Oportunidades</h4><ul>
+        <li>Plataformas offline / circuito cerrado sin necesidad de internet</li>
+        <li>Un docente puede llegar a mil alumnos simultáneamente</li>
+        <li>Adultos mediadores (mamás, abuelas) como aliadas del acceso</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--ca)">"Mi profesor no sabe usar tecnología; ¿cómo me va a enseñar tecnología?" <span class="cs">G4 · Alumnos</span></div>
+      <div class="cta" style="border-color:var(--ca)">"Lo que un docente da a 30 alumnos, a través de herramientas tecnológicas se puede dar a mil alumnos en el mismo momento." <span class="cs">G4 · Alumnos</span></div>
+    </div>
+    <div class="gc fi">
+      <span class="gtag" style="background:var(--ca)">G5 · Alumnos (discapacidad, empleabilidad)</span>
+      <div class="gs"><h4 style="color:var(--ca)">🎯 Intereses</h4><ul>
+        <li>Herramientas para incorporarse al mundo laboral fácilmente</li>
+        <li>Tecnología accesible para personas con discapacidad visual</li>
+        <li>IA que traduce voz a texto y lenguaje alternativo</li>
+        <li>Competitividad: actualizarse permanentemente</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--ca)">🚧 Obstáculos</h4><ul>
+        <li>Costo de dispositivos, internet y mantenimiento</li>
+        <li>Dispositivos accesibles (Apple) inaccesibles por precio</li>
+        <li>Sin computadora en casa; papá no puede comprar smartphone</li>
+        <li>Baja cobertura de señal en comunidades rurales</li>
+      </ul></div>
+      <div class="gs"><h4 style="color:var(--ca)">🌱 Oportunidades</h4><ul>
+        <li>IA que traduce voz a texto para personas ciegas o con dificultades</li>
+        <li>Instituciones con plan estratégico contextualizado para Guatemala</li>
+        <li>Nuevas generaciones que se adaptan naturalmente a la tecnología</li>
+      </ul></div>
+      <div class="cta" style="border-color:var(--ca)">"La línea más accesible es la de Apple, y ustedes saben el costo; acceder es bastante difícil." <span class="cs">G5 · Alumnos</span></div>
+      <div class="cta" style="border-color:var(--ca)">"No va a funcionar si no tenemos un plan estratégico bien adecuado a nuestro contexto." <span class="cs">G5 · Alumnos</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="bgcream" id="const">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Constructos Analíticos</span></h2>
+  <p class="ssub fi">9 constructos · haz clic en "Ver todas las citas" para desplegar el archivo completo de evidencia textual por constructo</p>
+  <div id="cg"></div>
+</div>
+</section>
+
+<section id="graf">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Datos Visualizados</span></h2>
+  <p class="ssub fi">133 menciones totales · 4 perspectivas · ranking por frecuencia × consenso</p>
+  <div class="gr2">
+    <div class="ch fi">
+      <div class="ch-t">📊 Frecuencia de menciones (ranking por score)</div>
+      <div id="barras">
+        <div class="br"><div class="br-l"><span>Brecha Infraestructura</span><span>25 · 100%</span></div><div class="br-t"><div class="br-f" data-w="100" style="background:var(--teal)"><span>25</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Potencial Escalabilidad</span><span>22 · 100%</span></div><div class="br-t"><div class="br-f" data-w="88" style="background:var(--olive)"><span>22</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Analfabetismo Digital</span><span>18 · 100%</span></div><div class="br-t"><div class="br-f" data-w="72" style="background:var(--teal)"><span>18</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Apropiación sin Pedagogía</span><span>15 · 100%</span></div><div class="br-t"><div class="br-f" data-w="60" style="background:var(--teal)"><span>15</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Resistencia Institucional</span><span>14 · 75%</span></div><div class="br-t"><div class="br-f" data-w="56" style="background:var(--orange)"><span>14</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Brecha Capital Familiar</span><span>13 · 75%</span></div><div class="br-t"><div class="br-f" data-w="52" style="background:var(--orange)"><span>13</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Desalineación Curricular</span><span>11 · 75%</span></div><div class="br-t"><div class="br-f" data-w="44" style="background:var(--orange)"><span>11</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Vacío Normativo IA</span><span>8 · 50%</span></div><div class="br-t"><div class="br-f" data-w="32" style="background:var(--magenta)"><span>8</span></div></div></div>
+        <div class="br"><div class="br-l"><span>Exclusión Discapacidad</span><span>7 · 50%</span></div><div class="br-t"><div class="br-f" data-w="28" style="background:var(--gray)"><span>7</span></div></div></div>
+      </div>
+    </div>
+    <div class="ch fi">
+      <div class="ch-t">🎯 Consenso por perspectiva (C · L · E · A)</div>
+      <div>
+        <div class="cs-row"><span class="cs-nm">Brecha Infraestructura</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--teal)">100%</span></div>
+        <div class="cs-row"><span class="cs-nm">Potencial Escalabilidad</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--teal)">100%</span></div>
+        <div class="cs-row"><span class="cs-nm">Analfabetismo Digital</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--teal)">100%</span></div>
+        <div class="cs-row"><span class="cs-nm">Apropiación sin Pedagogía</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--teal)">100%</span></div>
+        <div class="cs-row"><span class="cs-nm">Resistencia Institucional</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd off">A</span></div><span class="cs-pct" style="color:var(--olive)">75%</span></div>
+        <div class="cs-row"><span class="cs-nm">Brecha Capital Familiar</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd off">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--olive)">75%</span></div>
+        <div class="cs-row"><span class="cs-nm">Desalineación Curricular</span><div class="cs-ds"><span class="cd off">C</span><span class="cd" style="background:var(--cl)">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--olive)">75%</span></div>
+        <div class="cs-row"><span class="cs-nm">Vacío Normativo IA</span><div class="cs-ds"><span class="cd" style="background:var(--cc)">C</span><span class="cd off">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd off">A</span></div><span class="cs-pct" style="color:var(--orange)">50%</span></div>
+        <div class="cs-row"><span class="cs-nm">Exclusión Discapacidad</span><div class="cs-ds"><span class="cd off">C</span><span class="cd off">L</span><span class="cd" style="background:var(--ce)">E</span><span class="cd" style="background:var(--ca)">A</span></div><span class="cs-pct" style="color:var(--orange)">50%</span></div>
+      </div>
+    </div>
+    <div class="ch fi">
+  <div class="ch-t">🍩 Distribución de menciones por constructo (133 total)</div>
+  <svg viewBox="0 0 220 195" style="max-width:220px;display:block;margin:0 auto;">
+    <circle cx="110" cy="98" r="74" fill="none" stroke="#f0f0f0" stroke-width="33"/>
+    <!-- C1 Infraestructura: 25/133 = 87.4 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--teal)"      stroke-width="33" stroke-dasharray="87.4 464.7" stroke-dashoffset="0"      transform="rotate(-90 110 98)"/>
+    <!-- C5 Escalabilidad: 22/133 = 76.7 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--olive)"     stroke-width="33" stroke-dasharray="76.7 464.7" stroke-dashoffset="-87.4"  transform="rotate(-90 110 98)"/>
+    <!-- C2 Analfabetismo: 18/133 = 62.7 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--teal-dark)" stroke-width="33" stroke-dasharray="62.7 464.7" stroke-dashoffset="-164.1" transform="rotate(-90 110 98)"/>
+    <!-- C3 Apropiación: 15/133 = 52.5 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="#00a0b8"          stroke-width="33" stroke-dasharray="52.5 464.7" stroke-dashoffset="-226.8" transform="rotate(-90 110 98)"/>
+    <!-- C4 Resistencia: 14/133 = 48.8 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--orange)"    stroke-width="33" stroke-dasharray="48.8 464.7" stroke-dashoffset="-279.3" transform="rotate(-90 110 98)"/>
+    <!-- C6 Cap. Familiar: 13/133 = 45.5 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="#c06020"          stroke-width="33" stroke-dasharray="45.5 464.7" stroke-dashoffset="-328.1" transform="rotate(-90 110 98)"/>
+    <!-- C7 Desalineación: 11/133 = 38.6 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--magenta)"   stroke-width="33" stroke-dasharray="38.6 464.7" stroke-dashoffset="-373.6" transform="rotate(-90 110 98)"/>
+    <!-- C8 Vacío IA: 8/133 = 27.9 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="#7a5c99"          stroke-width="33" stroke-dasharray="27.9 464.7" stroke-dashoffset="-412.2" transform="rotate(-90 110 98)"/>
+    <!-- C9 Discapacidad: 7/133 = 24.6 -->
+    <circle cx="110" cy="98" r="74" fill="none" stroke="var(--gray)"      stroke-width="33" stroke-dasharray="24.6 464.7" stroke-dashoffset="-440.1" transform="rotate(-90 110 98)"/>
+    <text x="110" y="93"  text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="19" fill="var(--teal)">133</text>
+    <text x="110" y="108" text-anchor="middle" font-family="Open Sans"   font-size="9"    fill="var(--gray)">menciones</text>
+  </svg>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;justify-content:center;">
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Infraestruc. 19%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--olive);display:inline-block;"></span>Escalabilidad 17%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--teal-dark);display:inline-block;"></span>Analfab. 14%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:#00a0b8;display:inline-block;"></span>Apropiación 11%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;"></span>Resistencia 11%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:#c06020;display:inline-block;"></span>Cap. Familiar 10%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--magenta);display:inline-block;"></span>Curricular 8%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:#7a5c99;display:inline-block;"></span>Vacío IA 6%</span>
+    <span style="font-size:.66rem;display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--gray);display:inline-block;"></span>Discapacidad 5%</span>
+  </div>
+</div>
+    <div class="ch fi">
+      <div class="ch-t">🔥 Mapa de calor: Perspectiva × Constructo</div>
+      <canvas id="heatmap" width="380" height="262" style="max-width:100%;"></canvas>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="anal" style="background:var(--cream-light);">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Coincidencias, Diferencias y Tensiones</span></h2>
+  <p class="ssub fi">Solo 4 constructos alcanzan el 100% de coincidencias</p>
+  <div class="cc2">
+    <div class="cn fi">
+      <h3>🤝 Consenso total (las 4 perspectivas)</h3>
+      <ul class="cnl">
+        <li>La infraestructura (luz, internet, dispositivos) es la barrera estructural primaria sin excepción</li>
+        <li>El cuerpo docente carece de competencias para transmitir habilidades digitales</li>
+        <li>El acceso sin orientación pedagógica produce consumo recreativo, no aprendizaje</li>
+        <li>La tecnología tiene potencial transformador genuino y sostenido en todo el ecosistema</li>
+      </ul>
+    </div>
+    <div class="cn fi">
+      <h3>🔭 Lo que cada perspectiva ve de forma única</h3>
+      <ul class="cnl dfl">
+        <li><strong style="color:var(--cc)">Coordinadores:</strong> urgencia ante la IA, sostenibilidad organizacional, fragilidad ante migración de referentes</li>
+        <li><strong style="color:var(--cl)">Liderazgos:</strong> papás como agentes de cambio, retroceso post-pandemia, apps offline, viabilidad de alianzas</li>
+        <li><strong style="color:#7a7e2b">Educadores:</strong> miedo docente como factor pedagógico real, seguridad física de equipos, dimensión de discapacidad</li>
+        <li><strong style="color:var(--ca)">Alumnos:</strong> contradicción cotidiana escuela vs. organización, demanda de autonomía, inequidad económica familiar directa</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ten-b fi">
+    <h3>⚡ Tensiones — Puntos de desalineación con riesgo en la implementación</h3>
+    <div class="ti">
+      <div class="ti-l">TENSIÓN 1 · Urgencia de lo nuevo (Coord+Lid) vs. deuda de lo básico (Educ+Alum)</div>
+      <div class="ti-d">Coordinadores y Liderazgos señalan urgencia ante la IA. Educadores y Alumnos reportan que aún falta luz, internet y dispositivos. Actuar con urgencia donde no hay condiciones mínimas produce frustración, abandono y desconfianza futura.</div>
+    </div>
+    <div class="ti">
+      <div class="ti-l">TENSIÓN 2 · Autonomía estudiantil (Alum) vs. control pedagógico (Coord+Lid+Educ)</div>
+      <div class="ti-d">Alumnos piden exploración libre y confianza. Adultos piden marcos y orientación. Sin diálogo explícito, las intervenciones pueden volverse restrictivas y generar rechazo estudiantil en lugar de apropiación.</div>
+    </div>
+    <div class="ti">
+      <div class="ti-l">TENSIÓN 3 · Suplencia organizacional (Coord+Lid) vs. política pública estructural</div>
+      <div class="ti-d">Las organizaciones llenan vacíos del Estado. Esta suplencia funciona a corto plazo pero consolida la precariedad. El riesgo es que la dependencia de la sociedad civil se institucionalice sin resolver la estructura.</div>
+    </div>
+    <div class="ti">
+      <div class="ti-l">TENSIÓN 4 · Familias como puerta de entrada (Lid+Alum) vs. familias invisibles para el sistema (Educ)</div>
+      <div class="ti-d">Liderazgos y Alumnos identifican a las familias como factor crítico del acceso tecnológico en el hogar. Educadores no lo nombran así. Intervenciones que no incluyen a las familias pueden apagarse al llegar a casa.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="matriz">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Matriz de Consenso</span></h2>
+  <p class="ssub fi">9 constructos × 4 perspectivas · score = frecuencia × consenso · C=Coordinadores · L=Liderazgos · E=Educadores · A=Alumnos</p>
+  <div class="mx-w fi">
+    <table class="mx">
+      <thead><tr>
+        <th>Constructo</th>
+        <th style="color:var(--cc)">📋 Coord</th>
+        <th style="color:#ff8080">🌱 Lid</th>
+        <th style="color:var(--ce)">👩‍🏫 Educ</th>
+        <th>🎓 Alum</th>
+        <th>Consenso</th>
+        <th>Freq</th>
+        <th>Score</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="cnc">1. Brecha Infraestructura Habilitante</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bt">100% Total</span></td><td>25</td><td><b>25.0</b></td></tr>
+        <tr><td class="cnc">2. Potencial de Escalabilidad</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bt">100% Total</span></td><td>22</td><td><b>22.0</b></td></tr>
+        <tr><td class="cnc">3. Analfabetismo Digital Docente</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bt">100% Total</span></td><td>18</td><td><b>18.0</b></td></tr>
+        <tr><td class="cnc">4. Apropiación sin Mediación Pedagógica</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bt">100% Total</span></td><td>15</td><td><b>15.0</b></td></tr>
+        <tr><td class="cnc">5. Resistencia Institucional al Cambio</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="cx">✗</span></td><td><span class="bh">75% Alto</span></td><td>14</td><td><b>10.5</b></td></tr>
+        <tr><td class="cnc">6. Brecha de Capital Familiar</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="cx">✗</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bh">75% Alto</span></td><td>13</td><td><b>9.75</b></td></tr>
+        <tr><td class="cnc">7. Desalineación Curricular</td><td><span class="cx">✗</span></td><td><span class="ck" style="background:var(--cl)">✓</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bh">75% Alto</span></td><td>11</td><td><b>8.25</b></td></tr>
+        <tr><td class="cnc">8. Vacío Normativo ante la IA</td><td><span class="ck" style="background:var(--cc)">✓</span></td><td><span class="cx">✗</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="cx">✗</span></td><td><span class="bp">50% Parcial</span></td><td>8</td><td><b>4.0</b></td></tr>
+        <tr><td class="cnc">9. Exclusión Diferencial por Discapacidad</td><td><span class="cx">✗</span></td><td><span class="cx">✗</span></td><td><span class="ck" style="background:var(--ce)">✓</span></td><td><span class="ck" style="background:var(--ca)">✓</span></td><td><span class="bp">50% Parcial</span></td><td>7</td><td><b>3.5</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<section id="senales" style="background:#f9f7f4;">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Señales Débiles</span></h2>
+  <p class="ssub fi">Constructos emergentes con baja frecuencia estadística pero con peso cualitativo y potencial estratégico relevante</p>
+  <div class="sd-hdr fi"><p>Estas señales no alcanzan umbral de construcción de tema principal pero revelan dinámicas invisibilizadas, riesgos no anticipados o ventanas de oportunidad emergentes. A veces lo que todavía no tiene nombre en el discurso dominante es precisamente lo que más importa vigilar.</p></div>
+  <div id="sg"></div>
+</div>
+</section>
+
+<section class="bgcream" id="disc">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Discusión y Cocreación</span></h2>
+  <p class="ssub fi">4 pasos · 30 minutos · guía para el facilitador · notas editables en pantalla</p>
+  <div class="fsteps fi">
+    <div class="fst"><div class="fstn">1</div><div class="fstnm">Reconocer</div><div class="fstt">5 min</div></div>
+    <div class="fst"><div class="fstn">2</div><div class="fstnm">Dialogar</div><div class="fstt">15 min</div></div>
+    <div class="fst"><div class="fstn">3</div><div class="fstnm">Tensiones</div><div class="fstt">5 min</div></div>
+    <div class="fst"><div class="fstn">4</div><div class="fstnm">Comprometerse</div><div class="fstt">5 min</div></div>
+  </div>
+  <div class="pq fi"><div class="pqh" onclick="togglePq(this)"><span class="pqn">01</span><div><div class="pqt">Reconocimiento — ¿Se identifican con los datos?</div><div class="pqc">Activa: Brecha Infraestructura + Analfabetismo Digital Docente</div></div><span class="pqa">▾</span></div>
+  <div class="pqb"><div class="pqtxt">"En estos datos aparece que las condiciones básicas —luz, internet, dispositivos— son la barrera principal, y que la falta de capacitación docente la sigue de cerca. ¿Se reconocen en este diagnóstico? ¿Hay algo que les sorprende, que no esperaban ver, o que sienten que falta en este mapa?"</div>
+  <div class="pista"><strong>Pista:</strong> Observar si alguien defiende al Estado o al docente como señal de una narrativa distinta. Si el grupo se identifica masivamente, moverse rápido. Si hay disenso, explorarlo.</div>
+  <textarea class="nota-a" placeholder="Notas del facilitador..."></textarea></div></div>
+  <div class="pq fi"><div class="pqh" onclick="togglePq(this)"><span class="pqn">02</span><div><div class="pqt">Tensiones — Lo urgente vs. lo básico vs. las familias</div><div class="pqc">Activa: Vacío Normativo IA + Resistencia + Brecha Capital Familiar</div></div><span class="pqa">▾</span></div>
+  <div class="pqb"><div class="pqtxt">"Los coordinadores señalan urgencia de actuar ante la IA que 'va más rápido que la luz'. Los educadores dicen que los docentes no tienen condiciones básicas para enseñar tecnología. Los liderazgos dicen que las familias son tanto barrera como puerta de entrada. ¿Cómo convivimos con estas tres urgencias sin dejar a nadie atrás?"</div>
+  <div class="pista"><strong>Pista:</strong> Escuchar si alguien propone secuenciar (primero lo básico) o integrar (usar la IA para saltar etapas). Ambas son válidas y revelan visiones de cambio distintas.</div>
+  <textarea class="nota-a" placeholder="Notas del facilitador..."></textarea></div></div>
+  <div class="pq fi"><div class="pqh" onclick="togglePq(this)"><span class="pqn">03</span><div><div class="pqt">Acción — 90 días, con lo que ya tienen</div><div class="pqc">Activa: Apropiación sin Mediación Pedagógica</div></div><span class="pqa">▾</span></div>
+  <div class="pqb"><div class="pqtxt">"Si en los próximos 90 días quisiéramos que al menos un estudiante en cada contexto presente usara tecnología para aprender algo que antes no podía aprender —usando solo lo que ya tienen hoy— ¿cuál sería ese primer paso y quién lo daría?"</div>
+  <div class="pista"><strong>Pista:</strong> La restricción de 90 días y recursos existentes es intencional. Si alguien dice "el ministerio", regresar: "¿Y desde tu organización, qué pasaría esta semana?"</div>
+  <textarea class="nota-a" placeholder="Notas del facilitador..."></textarea></div></div>
+  <div class="pq fi"><div class="pqh" onclick="togglePq(this)"><span class="pqn">04</span><div><div class="pqt">Compromiso — Un paso concreto este mes</div><div class="pqc">Activa: Potencial de Escalabilidad Tecnológica</div></div><span class="pqa">▾</span></div>
+  <div class="pqb"><div class="pqtxt">"Antes de cerrar, cada quien elige una acción concreta en los próximos 30 días con los recursos que ya tiene. No es una meta del año; es un paso de este mes. ¿Cuál es esa acción, quién la va a hacer, y cómo vamos a saber que sucedió?"</div>
+  <div class="pista"><strong>Pista:</strong> No aceptar respuestas vagas. Preguntar: "¿A quiénes? ¿Cuándo exactamente? ¿Qué va a ser diferente al final?"</div>
+  <div class="cform">
+    <div class="cf"><label>🏢 Organización</label><input type="text" placeholder="Nombre de la organización"></div>
+    <div class="cf"><label>⚡ Acción concreta</label><input type="text" placeholder="Qué van a hacer exactamente"></div>
+    <div class="cf"><label>👤 Persona responsable</label><input type="text" placeholder="Nombre y rol"></div>
+    <div class="cf"><label>📅 Fecha de seguimiento</label><input type="date"></div>
+  </div></div></div>
+</div>
+</section>
+
+<section style="padding:50px 0;background:#fff;">
+<div class="container">
+  <h2 class="stitle fi"><span class="uy">Nota Metodológica</span></h2>
+  <div class="nota-box fi">
+
+    <p>Este informe es el resultado de un proceso de análisis cualitativo aplicado a seis grupos focales realizados en el marco del evento de Networking organizado por El Directorio Guatemala, en Abril de 2026. A continuación se describe el proceso completo, quiénes participaron, qué herramientas se utilizaron y qué debe considerarse si se desea replicar o reanalizar los datos.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);margin-top:16px;">Paso 1 — Recolección de voces</p>
+    <p>Se realizaron seis grupos focales con una única pregunta generadora: <em>"¿Cuáles son los intereses, obstáculos y oportunidades para integrar tecnología educativa en tu contexto?"</em> Los grupos se organizaron en cuatro perspectivas independientes: Coordinadores (G1), Liderazgos (G6), Educadores (G2 y G3) y Alumnos (G4 y G5). Los participantes son profesionales, líderes escolares, docentes y estudiantes vinculados a organizaciones educativas que trabajan con poblaciones en situación de vulnerabilidad en Guatemala y Centroamérica. </p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);margin-top:16px;">Paso 2 — Transcripción automática</p>
+    <p>Las sesiones fueron transcritas con Fireflies.ai. Las transcripciones son automáticas y pueden contener errores menores, especialmente en nombres propios, topónimos o términos en idiomas originarios. Los fragmentos utilizados como citas fueron revisados manualmente para verificar su fidelidad al audio original.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);margin-top:16px;">Paso 3 — Análisis temático</p>
+    <p>Se aplicó el método de análisis temático de Braun y Clarke en seis fases: familiarización con el material, codificación inicial, construcción de temas, revisión, definición y denominación, y reporte. Este análisis fue procesado con Claude.ai (Anthropic), que identificó patrones discursivos, construyó los constructos analíticos y extrajo las citas textuales de soporte. Los constructos no son descripciones literales de lo que se dijo, sino conceptos analíticos que nombran las fuerzas en juego detrás del discurso.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);margin-top:16px;">Paso 4 — Cuantificación</p>
+    <p>Cada mención directa o parafraseada de un constructo suma una unidad de frecuencia. Estas frecuencias son conteos cualitativos, no estadísticos: reflejan énfasis discursivo, no representatividad poblacional. El nivel de consenso indica en cuántas de las cuatro perspectivas apareció cada constructo (100% = las 4, 75% = 3, 50% = 2). El score final multiplica frecuencia × consenso para producir un ranking integrado que combina volumen y transversalidad.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);margin-top:16px;">Paso 5 — Validación</p>
+    <p>Este informe es un insumo para la conversación, no una verdad definitiva. El equipo Facilitador debe validar que los constructos, las citas y las frecuencias reflejan con fidelidad lo que ocurrió en las sesiones. Cualquier ajuste debe incorporarse antes de utilizar el informe en espacios públicos o de toma de decisiones.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal-dark);margin-top:20px;border-top:1px solid var(--cream);padding-top:16px;">Consideraciones para replicar o reanalizar</p>
+    <p>Si se desea aplicar este proceso a nuevos grupos focales, se recomienda mantener la pregunta generadora idéntica para permitir comparación longitudinal. Es importante clasificar cada grupo en una sola perspectiva antes de iniciar el análisis, ya que mezclar perspectivas contamina el cálculo de consenso. Si se desea reanalizar los datos existentes, las seis transcripciones originales son la fuente primaria. Se recomienda que al menos una persona que estuvo presente en los grupos focales participe en la revisión, ya que el contexto no verbal y los silencios no quedan registrados en las transcripciones.</p>
+
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal-dark);margin-top:20px;border-top:1px solid var(--cream);padding-top:16px;">Cómo replicar este análisis con Claude.ai — Estructura de prompts</p>
+    <p>Este análisis puede replicarse con cualquier conjunto de transcripciones usando Claude.ai. Los siguientes prompts deben usarse en secuencia dentro de la misma sesión para que el modelo acumule contexto progresivamente. Para análisis con más de seis transcripciones largas se recomienda usar la función de Proyectos de Claude.ai.</p>
+
+    <div style="margin-top:18px;display:flex;flex-direction:column;gap:12px;">
+
+      <div style="border-left:4px solid var(--teal);border-radius:0 10px 10px 0;background:rgba(0,109,134,.05);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:var(--teal);margin-bottom:6px;">PROMPT 1 — Configuración inicial del contexto</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo una sola vez al inicio, antes de pegar cualquier transcripción.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(0,109,134,.15);font-style:italic;color:#333;margin:0;">"Eres un asistente de análisis cualitativo. Voy a compartirte transcripciones de grupos focales. Todos los grupos responden a la misma pregunta generadora: [INSERTA TU PREGUNTA]. Hay [N] grupos organizados en [N] perspectivas: [LISTA TUS PERSPECTIVAS]. No analices todavía. Solo confirma que entendiste el contexto y espera a que te comparta las transcripciones."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--teal);border-radius:0 10px 10px 0;background:rgba(0,109,134,.05);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:var(--teal);margin-bottom:6px;">PROMPT 2 — Carga de transcripciones</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Repítelo una vez por cada transcripción que pegues.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(0,109,134,.15);font-style:italic;color:#333;margin:0;">"Esta es la transcripción del grupo [NÚMERO], perspectiva [NOMBRE]. Participantes: [DESCRIPCIÓN BREVE]. No analices todavía. Solo acusa recibo y espera a que te comparta todas las transcripciones."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--olive);border-radius:0 10px 10px 0;background:rgba(181,187,81,.06);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:#7a7e2b;margin-bottom:6px;">PROMPT 3 — Análisis temático completo</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo una sola vez cuando hayas compartido todas las transcripciones.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(181,187,81,.3);font-style:italic;color:#333;margin:0;">"Ahora analiza todas las transcripciones usando el método de análisis temático de Braun y Clarke. Para cada tema identificado genera: nombre del constructo como concepto analítico (no descripción literal), definición operacional en 2 líneas, perspectivas donde aparece, frecuencia estimada de menciones y al menos 3 citas textuales con su fuente (Gx · Perspectiva). Al final genera una tabla de frecuencia × consenso y un ranking integrado."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--olive);border-radius:0 10px 10px 0;background:rgba(181,187,81,.06);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:#7a7e2b;margin-bottom:6px;">PROMPT 4 — Extracción exhaustiva de citas por constructo</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo para completar el archivo de evidencia de un constructo específico.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(181,187,81,.3);font-style:italic;color:#333;margin:0;">"Para el constructo [NOMBRE], revisa todas las transcripciones y extrae TODAS las citas textuales o paráfrasis directas que lo evidencian, sin omitir ninguna. Organízalas por grupo y perspectiva. Incluye también menciones indirectas que implican el constructo aunque no lo nombren explícitamente."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--orange);border-radius:0 10px 10px 0;background:rgba(216,108,39,.05);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:var(--orange);margin-bottom:6px;">PROMPT 5 — Análisis comparativo entre perspectivas</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo para generar coincidencias, diferencias y tensiones.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(216,108,39,.2);font-style:italic;color:#333;margin:0;">"Compara los constructos entre las [N] perspectivas. Identifica: (1) qué constructos tienen consenso total y qué dice ese acuerdo sobre el ecosistema, (2) qué ve cada perspectiva que las otras no ven y qué dice eso sobre cada rol, (3) qué puntos de desalineación podrían chocar en la implementación. No es desacuerdo, es foco distinto. Redacta en prosa analítica, no en listas."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--orange);border-radius:0 10px 10px 0;background:rgba(216,108,39,.05);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:var(--orange);margin-bottom:6px;">PROMPT 6 — Señales débiles</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo para identificar lo que no llegó a ser tema principal pero vale la pena nombrar.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(216,108,39,.2);font-style:italic;color:#333;margin:0;">"Revisa todas las transcripciones y busca menciones que aparezcan en 1 o 2 grupos solamente, con baja frecuencia, pero que señalen dinámicas emergentes, riesgos no anticipados o dimensiones que el discurso dominante no nombra todavía. Para cada señal indica: nombre, descripción breve, citas de soporte, en qué grupos apareció y por qué podría importar más de lo que su frecuencia sugiere."</p>
+      </div>
+
+      <div style="border-left:4px solid var(--magenta);border-radius:0 10px 10px 0;background:rgba(181,5,68,.05);padding:14px 16px;">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;color:var(--magenta);margin-bottom:6px;">PROMPT 7 — Generación del informe visual HTML</div>
+        <div style="font-size:.75rem;color:#888;margin-bottom:6px;font-style:italic;">Úsalo al final, cuando el análisis esté validado por el equipo.</div>
+        <p style="font-size:.8rem;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(181,5,68,.15);font-style:italic;color:#333;margin:0;">"Con base en todo el análisis anterior, genera un informe HTML completo, autocontenido, con CSS y JavaScript embebidos. Debe incluir: secciones navegables, tarjetas por grupo con citas, visualizaciones de frecuencia y consenso, matriz comparativa y una sección de discusión con preguntas abiertas para facilitar. Usa este sistema de diseño: [DESCRIBE TU SISTEMA O PEGA TUS VARIABLES CSS]."</p>
+      </div>
+
+    </div>
+
+    <p class="nota-ci">La tecnología organizó. El equipo validó. Ustedes deciden.</p>
+  </div>
+</div>
+</section>
+
+<section style="padding:56px 0;background:linear-gradient(135deg,var(--teal-dark),var(--teal));position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;pointer-events:none;">
+    <span style="position:absolute;width:260px;height:260px;border-radius:50%;border:2px solid rgba(255,255,255,.07);top:-60px;right:-40px;display:block;"></span>
+    <span style="position:absolute;width:140px;height:140px;border-radius:50%;border:2px solid rgba(255,255,255,.07);bottom:-30px;left:-20px;display:block;"></span>
+  </div>
+  <div class="container" style="position:relative;z-index:2;text-align:center;">
+    <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.45rem;color:#fff;margin-bottom:6px;">Team<span style="color:var(--yellow)">4</span>Tech </div>
+    <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.9rem;color:#fff;line-height:1.2;margin-bottom:16px;">¿Tienes ideas, preguntas<br>o quieres ir más lejos?</h2>
+    <p style="color:rgba(255,255,255,.85);font-size:.95rem;max-width:540px;margin:0 auto 12px;">¿Quieres conocer más sobre este tipo de metodologías para la educación? ¿Quieres compartir tus ideas e impresiones sobre estos resultados?</p>
+    <p style="color:var(--yellow);font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;margin-bottom:28px;">Únete a nuestra comunidad de práctica.</p>
+    <a href="https://community.team4tech.org/plans/364310?bundle_token=1ab4075e0d807cc4a92ebd9666ba3d41&utm_source=chatgpt.com" target="_blank" rel="noopener"
+      style="display:inline-block;background:var(--yellow);color:var(--teal-dark);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;padding:14px 36px;border-radius:30px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(0,0,0,.2);"
+      onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 26px rgba(0,0,0,.25)'"
+      onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 18px rgba(0,0,0,.2)'">
+      🌱 Unirme a la comunidad
+    </a>
+    <p style="margin-top:22px;font-size:.75rem;color:rgba(255,255,255,.5);">community.team4tech.org</p>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="fl">Team<span>4</span>Tech</div>
+    
+    <p style="margin-top:5px;"><a href="https://team4tech.org">team4tech.org</a></p>
+  </div>
+</footer>
+
+<script>
+// ─── PERSPECTIVA CONFIG ──────────────────────────────────────────────────────
+const PC={coord:'var(--cc)',lid:'var(--cl)',educ:'var(--ce)',alum:'var(--ca)'};
+const PL={coord:'G1·Coord',lid:'G6·Lid',educ:'Educ',alum:'Alum'};
+
+// ─── CONSTRUCT DATA (todas las citas extraídas de transcripciones) ───────────
+const C=[
+{n:1,ico:'🏗️',nm:'Brecha de Infraestructura Habilitante',freq:25,cons:100,persp:[1,1,1,1],
+def:'Insuficiencia o ausencia de condiciones físico-técnicas mínimas —energía eléctrica, conectividad, dispositivos funcionales— sin las cuales ninguna intervención pedagógica es materialmente posible. Su distribución es geográficamente inequitativa y se concentra en zonas rurales.',
+citas:[
+ {t:'El acceso a Internet en las áreas rurales cuesta un montón; en Santiago Titlán, en Chajul, varias partes del área rural.',p:'coord'},
+ {t:'A veces hay Internet en esas áreas, pero se tarda años en cargar una página; para ver un vídeo, peor todavía.',p:'coord'},
+ {t:'Hay escuelas que tienen equipo y no tienen Internet; hay escuelas que tienen equipo y no tienen luz inclusive, o la electricidad es muy inestable.',p:'coord'},
+ {t:'No se hace el trabajo intencionalmente desde el ministerio en muchos casos, especialmente en las zonas rurales.',p:'coord'},
+ {t:'La electricidad no es la misma de las ciudades y lo mismo pasa con el Internet.',p:'coord'},
+ {t:'Primero no llega ni siquiera el servicio de luz, luego servicio de Internet y luego un aparato donde el alumno pueda accesar a estos medios de tecnología.',p:'educ'},
+ {t:'Les dimos tablets y no tenían ni luz ni Internet; eso fue un obstáculo.',p:'educ'},
+ {t:'Aunque ellos tengan el deseo de implementarlo, todos estos factores (luz, internet, aparato) los rebasan.',p:'educ'},
+ {t:'No se cuenta con la tecnología necesaria para desarrollar las clases; en pocas escuelas hay computadoras, en la mayoría no hay.',p:'educ'},
+ {t:'Los niños desconocen de qué es una computadora, cómo se enciende; hay niños que desconocen incluso de un teléfono.',p:'educ'},
+ {t:'Pareciera mentira, pero no hay energía eléctrica; las condiciones de las aulas están mal, las distancias, las redes.',p:'educ'},
+ {t:'Son obstáculos que se presentan al momento de accionar y nos limitan a alcanzar nuestros objetivos.',p:'educ'},
+ {t:'En el área rural no hay acceso a tecnología; hay jóvenes que llegan a los quince, veinte años y nunca han encendido una computadora.',p:'alum'},
+ {t:'En Chajul a veces no hay energía eléctrica; los paneles solares no funcionan porque es nublado; la señal de Internet no llega; los teléfonos enviados de EE.UU. no los pueden usar.',p:'alum'},
+ {t:'En los centros educativos solo hay 10 computadoras para 30 niños; no le estamos dando el acceso adecuado.',p:'alum'},
+ {t:'La mayoría de recursos educativos necesitan conectividad a Internet y eso es un gran obstáculo; deberían existir recursos que no lo requieran.',p:'alum'},
+ {t:'Hay muchos niños que viven en el área rural y no tienen acceso a la tecnología, a un móvil.',p:'alum'},
+ {t:'Como alumno en una organización, no tienes la compu de última generación; el sistema está un poquito viejo.',p:'alum'},
+ {t:'Hay obstáculos bastante fuertes del área rural: no hay energía eléctrica, no hay acceso a un dispositivo y mucho menos a Internet.',p:'alum'},
+ {t:'No hay luz, no hay cobertura, Internet; el costo de los materiales de la tecnología.',p:'alum'},
+ {t:'Veo como obstáculo la baja cobertura de señal; mi papá no me puede comprar un teléfono inteligente; no tengo computadora en mi casa.',p:'alum'},
+ {t:'El servicio de Internet también representa cierto costo.',p:'alum'},
+ {t:'Las escuelas nacionales no tienen tecnología o no tecnología suficiente, tal vez una vez por semana un periodo.',p:'lid'},
+ {t:'En el Quiché tenemos 40 escuelas; la mayoría no tiene acceso a tecnología; lo único que necesita el niño es un teléfono y no tiene.',p:'lid'},
+ {t:'Complejo el tema del acceso al Internet.',p:'lid'},
+]},
+{n:2,ico:'📚',nm:'Analfabetismo Digital Docente',freq:18,cons:100,persp:[1,1,1,1],
+def:'Déficit de competencias tecnológicas básicas en el cuerpo docente que bloquea la transmisión de habilidades digitales. Se agrava por la ausencia de formación continua, el envejecimiento del magisterio y la eliminación de profesorados universitarios en algunos países.',
+citas:[
+ {t:'Tengo correo pero no me sé la contraseña; eso nos cuesta para mandarles encuestas y Google Forms.',p:'coord'},
+ {t:'La capacitación que también tienen los docentes muchas veces en utilizar la tecnología es un obstáculo central.',p:'coord'},
+ {t:'Hay fellows que reportan que jóvenes están haciendo tareas con IA y los docentes no saben qué hacer.',p:'coord'},
+ {t:'Si hablamos de Drive: ¿cómo funciona eso?, ¿dónde empiezo?, ¿dónde está mi carpeta, dónde está el sistema? Necesitamos capacitación constante de todas las herramientas.',p:'educ'},
+ {t:'Muchos de los educadores son personas mayores; el personal no se está capacitando para que tenga las competencias.',p:'educ'},
+ {t:'Las universidades eliminaron los profesorados; la generación de docentes ya va envejeciendo, no tienen las competencias necesarias y el sistema no está diseñado para capacitar.',p:'educ'},
+ {t:'Nosotros como educadores nos estamos capacitando en la tecnología para tener la capacidad de orientar a esos estudiantes, porque hoy en día la tecnología nos está dominando.',p:'educ'},
+ {t:'Los niños tienen una tablet, una computadora, la mayoría, pero no hay las competencias de los docentes para guiarlos.',p:'educ'},
+ {t:'A veces algunos docentes: ¿qué es drive?, ¿cómo se sube este enlace, qué es un enlace? Desde ahí empiezan los desafíos.',p:'educ'},
+ {t:'Somos analfabetos en el tema de tecnología; hay tantos programas gratuitos pero desconocemos cómo se usan, cómo se aplica.',p:'educ'},
+ {t:'No tenemos esa formación; seguimos siendo analfabetos en tecnología.',p:'educ'},
+ {t:'Tenemos herramientas, tenemos infraestructura, pero no tenemos las capacidades y los conocimientos y las herramientas digitales apropiadas para los diferentes niveles.',p:'educ'},
+ {t:'Hemos intentado buscar organizaciones que tienen experiencias, pero no las hemos encontrado.',p:'educ'},
+ {t:'Mi profesor es una persona muy grande y no sabe usar tecnología; el obstáculo es que ni él la usa; ¿cómo me va a enseñar tecnología?',p:'alum'},
+ {t:'Una de las necesidades que tenemos es la capacitación de maestros; no tenemos recursos para capacitar para que un maestro se forme para poder apoyar más.',p:'lid'},
+ {t:'Necesitamos más capacitación de maestros, al personal en general, casi de manera de emergencia para empezar a trabajar herramientas de tecnología.',p:'lid'},
+ {t:'Los educadores a veces no tienen todos los conocimientos.',p:'lid'},
+ {t:'Si tenemos un maestro de computación, pero para que ellos lleguen a las competencias que necesitarán, necesitamos más.',p:'lid'},
+]},
+{n:3,ico:'🎮',nm:'Apropiación sin Mediación Pedagógica',freq:15,cons:100,persp:[1,1,1,1],
+def:'Condición en que hay acceso a dispositivos o conectividad pero falta orientación para transformar ese acceso en aprendizaje significativo, competencias aplicables o agencia digital. El acceso sin mediación refuerza el consumo pasivo y puede ampliar la brecha de competencias.',
+citas:[
+ {t:'Hay muchos jóvenes que tienen teléfonos o acceso a tecnología, están haciendo tareas con IA y los docentes no saben qué hacer.',p:'coord'},
+ {t:'No hay una guía del ministerio: qué hacemos, cómo lidiar con el uso de la inteligencia artificial.',p:'coord'},
+ {t:'Aprenden a jugar, aprenden a utilizar un montón de cosas, pero algo útil para la vida yo siento que no está pasando.',p:'educ'},
+ {t:'Está quedando atrás esta parte de dar competencias, de cómo utilizamos la tecnología para el día a día y no sólo para pasar el tiempo y juegos.',p:'educ'},
+ {t:'Aunque los niños tienen una tablet, la mayoría, aprenden a jugar pero no aprenden algo útil; está quedando atrás esa parte.',p:'educ'},
+ {t:'En el área rural la mayor parte tiene un celular; hay pobreza, pero tiene un celular; el punto es que muchas veces no lo saben usar o lo usan de una manera equivocada.',p:'educ'},
+ {t:'Con una buena orientación, con una buena formación, esto podría cambiar.',p:'educ'},
+ {t:'Los niños están acostumbrados a utilizar la computadora o el teléfono solamente para jugar, no por interés educativo.',p:'alum'},
+ {t:'Falta la educación general de la educación de la tecnología; el uso adecuado de la tecnología.',p:'alum'},
+ {t:'El desconocimiento de las herramientas tecnológicas es otro obstáculo; no hay conocimiento de las oportunidades que existen.',p:'alum'},
+ {t:'El teléfono se usa solo para juegos o música; ni siquiera aplicaciones para aprendizaje.',p:'alum'},
+ {t:'La tecnología es una bendición, pero no va a funcionar si no tenemos un plan estratégico bien adecuado a nuestro contexto.',p:'alum'},
+ {t:'Con nuestra organización es una oportunidad pero también un obstáculo: tenemos que saber dirigir a nuestros alumnos y maestros.',p:'lid'},
+ {t:'Los jóvenes del área rural a veces prefieren gastar en una recarga que en algo más como alimentación o ropa.',p:'lid'},
+ {t:'Hay que redireccionar bien y enseñar bien a los maestros cómo aprovechar para no crear una mala dependencia.',p:'lid'},
+]},
+{n:4,ico:'🚀',nm:'Potencial de Escalabilidad Tecnológica',freq:22,cons:100,persp:[1,1,1,1],
+def:'Reconocimiento compartido de que la tecnología puede multiplicar el alcance educativo, superar barreras geográficas, habilitar el autoaprendizaje, impulsar la formación laboral y el emprendimiento, y llegar a poblaciones históricamente excluidas.',
+citas:[
+ {t:'Iniciaron solamente con Starlink en Guatemala, pero ahora ya está Amazon; súper estable, la velocidad muy buena.',p:'coord'},
+ {t:'Uno de los intereses es seguir fortaleciendo redes para llevar la tecnología, el acceso a energía y capacitar a mujeres y jóvenes.',p:'coord'},
+ {t:'Tenemos 30 centros comunitarios digitales en Alta Verapaz, Huehue y Quiché donde alfabetizamos en idiomas originarios.',p:'coord'},
+ {t:'La creación de redes: tenemos los centros comunitarios, el Internet, la infraestructura; ¿cómo podemos hacer redes para aprovechar el espacio y las conexiones?',p:'coord'},
+ {t:'Nos ha facilitado más el trabajo en equipo; antes compartíamos documentos por memorias y ahora podemos trabajarlo en línea.',p:'educ'},
+ {t:'Los jóvenes lo tomaron como una oportunidad de poder hablar sobre salud mental sin ir al psicólogo; con la plataforma tuvimos mejor respuesta.',p:'educ'},
+ {t:'Hay tantas oportunidades para enseñar jóvenes cómo estar seguros en línea también.',p:'educ'},
+ {t:'Uno como maestro debe estar consciente que el proceso va evolucionando y son el medio para que sus estudiantes puedan mejorar esas habilidades.',p:'educ'},
+ {t:'Con buena orientación y formación, el celular como recurso mínimo podría cambiar todo.',p:'educ'},
+ {t:'Lo que un docente puede darle en aula a 30 alumnos, a través de las herramientas tecnológicas se puede dar a mil alumnos en el mismo momento.',p:'alum'},
+ {t:'Yo creo que una gran oportunidad que existe ahorita es promover la robótica en todos los niveles educativos.',p:'alum'},
+ {t:'Plataformas de circuito cerrado que no necesitan Internet, sino que se pueden estar utilizando con servidores.',p:'alum'},
+ {t:'Hay otras oportunidades de herramientas tecnológicas en las que se habla de lectura, escritura, matemáticas, formación laboral y emprendimiento.',p:'alum'},
+ {t:'Una vez que las mamás se dan cuenta el valor que tiene una aplicación, ellas dicen: dígame cuánto tiempo le doy a mi hijo el teléfono.',p:'alum'},
+ {t:'Hay muchos servicios gratuitos; por ejemplo, Google da ciertos servicios gratuitos y eso es importante.',p:'alum'},
+ {t:'Mejora el proceso del aprendizaje porque al descargar aplicaciones para personas ciegas, sordas, facilita todo ese acceso.',p:'alum'},
+ {t:'La inteligencia artificial puede ayudar a transformar aprendizajes; puede usar su voz para traducirse en un lenguaje diferente.',p:'alum'},
+ {t:'La tecnología es una bendición: podemos ver vídeos, tenemos herramientas distintas; antes nos tocaba ir a la biblioteca.',p:'alum'},
+ {t:'Las nuevas generaciones les está gustando la tecnología; la juventud hoy en día se adapta bastante.',p:'alum'},
+ {t:'La pandemia sí vino a empujar; ya muchos colegios usan plataformas digitales para las tareas y demás que no sucedía antes.',p:'lid'},
+ {t:'Project Alianza provee tecnología a los niños, con acceso a casi 200 libros; solo necesita descargar la aplicación y luego no más Internet.',p:'lid'},
+ {t:'El interés es general: a todos nos gustaría siempre estar al día con la tecnología.',p:'lid'},
+]},
+{n:5,ico:'🚪',nm:'Resistencia Institucional al Cambio',freq:14,cons:75,persp:[1,1,1,0],
+def:'Disposición activa de individuos e instituciones a rechazar la integración tecnológica por miedo, cálculo desfavorable de costos-beneficios personales, protección de la estabilidad laboral o apego a métodos conocidos. La resistencia no es irracional: el sistema no incentiva el cambio.',
+citas:[
+ {t:'Hay resistencia de los maestros mayores generalmente: para qué voy a aprender algo nuevo si lo hecho toda mi vida igual y funciona.',p:'coord'},
+ {t:'Les da miedo tocarlo porque se va a arruinar: ¿qué hago yo si se arruina, voy a tener que pagar?',p:'coord'},
+ {t:'Están engavetados los equipos en muchísimos casos.',p:'coord'},
+ {t:'Es lamentable que los profesores no quieran salir ni dejar sus puestos; difícilmente va a pasar el cambio que uno quisiera si esos maestros no quieren cambiar.',p:'coord'},
+ {t:'Muchos de los educadores son personas mayores; el sistema no está diseñado para capacitar.',p:'educ'},
+ {t:'Hemos encontrado que hay maestros que se resisten a la formación tecnológica: ya me voy a retirar, eso a mí no me interesa.',p:'educ'},
+ {t:'Eso es una barrera para que ellos puedan enseñarle a sus estudiantes.',p:'educ'},
+ {t:'Hay grupos de sector que dicen no, porque esto implica más horas de capacitación.',p:'educ'},
+ {t:'Prefieren no asumir esa responsabilidad: tengo que viajar en moto, si llueve el polvo se me cae.',p:'educ'},
+ {t:'Dentro del gobierno que rige educación hay una estructura que también implica responsabilidad docente sobre el equipo.',p:'educ'},
+ {t:'La tecnología se va quedando como en el último lugar porque hay otras cosas más básicas, importantes, necesarias.',p:'educ'},
+ {t:'Incluso muchas escuelas como retrocedieron; en vez de seguir avanzando, ya se volvió a la normalidad y dejaron la tecnología a un lado.',p:'lid'},
+ {t:'Lo que el Ministerio de Educación está tratando de hacer no es tan realista tampoco.',p:'lid'},
+ {t:'Exacto, tiene que ser algo integral; los educadores a veces no tienen todos los conocimientos.',p:'lid'},
+]},
+{n:6,ico:'👨‍👩‍👧',nm:'Brecha de Capital Familiar',freq:13,cons:75,persp:[1,1,0,1],
+def:'Déficit de conocimiento, motivación y recursos económicos en el entorno familiar que limita el apoyo al aprendizaje tecnológico. Los padres y cuidadores son simultáneamente la principal barrera y la principal puerta de entrada al acceso tecnológico en el hogar.',
+citas:[
+ {t:'La transferencia de los conocimientos es un obstáculo: alguien es súper pilas pero se va de la comunidad, consiguió una beca, o migra para trabajar.',p:'coord'},
+ {t:'No solo que haya un referente pila, sino que tengamos muchos referentes pilas; eso es la sostenibilidad.',p:'coord'},
+ {t:'También concientizar a un adulto que acompaña al niño —la mamá, una abuelita, una tía— porque al final el dispositivo lo tiene un adulto.',p:'alum'},
+ {t:'El acceso a la tecnología lo tiene un adulto; la oportunidad está en concientizar a ese adulto de la responsabilidad e importancia que tiene.',p:'alum'},
+ {t:'Una vez que las mamás se dan cuenta el valor que tiene una aplicación, aunque no sepan leer, dicen: dígame cuánto tiempo le doy a mi hijo el teléfono.',p:'alum'},
+ {t:'En cuanto más temprano empiece el estudiante, más fácil va a ser acceder a otras plataformas.',p:'alum'},
+ {t:'Todo lo que dijeron se resume a costos: un dispositivo electrónico no funciona sin Internet y el Internet representa un gasto adicional para los papás.',p:'alum'},
+ {t:'Lo que influye mucho también es la falta de conocimiento que tienen los papás.',p:'lid'},
+ {t:'Al no tener los conocimientos de que la tecnología va a ser herramienta básica, a la mamá no le va a importar, no va a querer invertir.',p:'lid'},
+ {t:'A la hora de que el papá y la mamá comprenda que va a ser herramienta básica, ella misma va a decir: puchicas, sí voy a ayudar a mi hijo.',p:'lid'},
+ {t:'Hay que meterle la idea a los papás que eso va a ayudar a que el niño sea autosuficiente.',p:'lid'},
+ {t:'Si no formamos bien a los papás y no vamos puerta en puerta o hacemos un trabajo de campo para hablar con la mamá, a veces solo es mamá soltera.',p:'lid'},
+ {t:'Fíjese que en cierto tiempo ya la tecnología va a afectar a su hijo; comprender, darle el mensaje correctamente, va a afectar mucho.',p:'lid'},
+]},
+{n:7,ico:'📋',nm:'Desalineación Curricular',freq:11,cons:75,persp:[0,1,1,1],
+def:'Distancia entre los contenidos y metodologías del currículo oficial y las competencias tecnológicas, críticas y laborales que demanda el contexto contemporáneo. Los alumnos viven la contradicción cotidianamente entre dos mundos formativos paralelos: la escuela y la organización.',
+citas:[
+ {t:'Está quedando atrás la parte de dar competencias, de cómo utilizamos la tecnología para el día a día y no sólo para pasar el tiempo.',p:'educ'},
+ {t:'El sistema no está diseñado para capacitar; aprenden a usar la tecnología pero no aprenden competencias para la vida.',p:'educ'},
+ {t:'El currículum nacional base no es formativo sino informativo; el contenido académico ya es totalmente obsoleto.',p:'alum'},
+ {t:'La formación escolástica no es moderna, no es renovada.',p:'alum'},
+ {t:'Cuando los niños vienen en la organización, como alumno tengo una formación completamente diferente a la de la escuela; no está pareja.',p:'alum'},
+ {t:'Lamentablemente los alumnos están siendo formados para ser trabajadores, no para ser emprendedores.',p:'alum'},
+ {t:'A mí como alumno me interesa aprender herramientas que me permitan desarrollar competencias para incorporarme al mundo laboral fácil.',p:'alum'},
+ {t:'Me gustaría que me ayudaran a desarrollar competencias para el autoaprendizaje, que yo entienda cómo puedo aprender con mis propios recursos.',p:'alum'},
+ {t:'Ellos vienen de escuelas públicas donde tienen muy poco o cero conocimiento de computación.',p:'lid'},
+ {t:'Entonces les toca este gran cambio a un colegio donde quizás sí tienen una clase de computación.',p:'lid'},
+ {t:'Nuestro interés es que nuestros chicos ingresen al mercado laboral y para esto claramente necesitan habilidades tecnológicas.',p:'lid'},
+]},
+{n:8,ico:'🤖',nm:'Vacío Normativo ante la IA',freq:8,cons:50,persp:[1,0,1,0],
+def:'Ausencia de políticas, guías pedagógicas o marcos institucionales que orienten el uso de inteligencia artificial en contextos educativos, cuando su adopción estudiantil ya es un hecho generalizado. Es el único constructo donde el sentido de emergencia es explícito, sostenido y urgente.',
+citas:[
+ {t:'Hay muchos niños, jóvenes especialmente, que tienen teléfonos y están haciendo tareas con inteligencia artificial; los docentes no saben qué hacer.',p:'coord'},
+ {t:'No hay una guía del ministerio por ejemplo: qué hacemos, cómo lidiar con eso, como el uso de la inteligencia artificial.',p:'coord'},
+ {t:'Estamos buscando codiseñar con fellows una currícula súper básica para que los otros fellows sean capacitados en IA.',p:'coord'},
+ {t:'Lo tenemos encima y hay mucha gente que no sabe qué hacer; hay que actuar rápido porque esto va más rápido que la luz.',p:'coord'},
+ {t:'Hay mucha preocupación de los educadores para utilizar IA; también más para jóvenes, adolescentes que utilizan IA para hacer sus tareas.',p:'educ'},
+ {t:'Sobre los detectores para ver si están utilizando IA o es su propio trabajo: no sé cómo manejar eso.',p:'educ'},
+ {t:'No sé, pienso que primero necesitamos pensar en el nivel de educación primaria básico; hay mucha preocupación global sobre el uso de la IA.',p:'educ'},
+ {t:'El desconocimiento de las herramientas tecnológicas también es obstáculo; no hay conocimiento de las diferentes oportunidades que existen.',p:'alum'},
+]},
+{n:9,ico:'♿',nm:'Exclusión Diferencial por Discapacidad',freq:7,cons:50,persp:[0,0,1,1],
+def:'Barreras adicionales que enfrentan las personas con discapacidad para acceder y usar tecnología educativa, derivadas del desconocimiento docente sobre herramientas de accesibilidad y del alto costo de los dispositivos con mayor accesibilidad disponible.',
+citas:[
+ {t:'Yo trabajo con personas con discapacidad; para personas ciegas, necesitamos lectores de pantallas, ampliadores de pantallas y muchos docentes desconocen de eso.',p:'educ'},
+ {t:'Lo que han hecho hasta el momento es dejar fuera a nuestros estudiantes de todos los procesos de tecnología.',p:'educ'},
+ {t:'Eso los pone en desventaja a la hora de iniciar una carrera universitaria o de incluirse en el mercado laboral, porque ellos no aprenden tecnología.',p:'educ'},
+ {t:'Hay muchos niños y jóvenes con discapacidad que quieren superarse; lamentablemente el contexto comunitario no lo permite incluirse en una escuela.',p:'alum'},
+ {t:'El obstáculo más grande es el acceso a la tecnología para personas con discapacidad, especialmente para personas con discapacidad visual.',p:'alum'},
+ {t:'La línea en tecnología de dispositivos más accesible que hay es de la Apple y ustedes saben el costo; acceder a un dispositivo de esos es bastante difícil.',p:'alum'},
+ {t:'Para poder usar como un estudiante con discapacidad, para poder utilizarlo se queda muy limitada la accesibilidad.',p:'alum'},
+]},
+];
+
+const WS=[
+{ico:'🌍',nm:'Pandemia como Catalizador Interrumpido',
+desc:'La pandemia forzó la adopción de plataformas digitales, pero muchas escuelas revertieron a la "normalidad" post-pandemia, perdiendo el avance logrado.',
+citas:[{t:'"La pandemia de cierta manera sí vino a empujar esto; ya muchos colegios usan plataformas digitales para las tareas y demás que no sucedía antes."',s:'G6 · Liderazgos'},{t:'"Muchas escuelas retrocedieron; en vez de seguir avanzando, ya se volvió a la normalidad y dejaron la tecnología a un lado."',s:'G6 · Liderazgos'}],
+grupos:['G6 · Liderazgos'],
+why:'El retroceso post-pandemia sugiere que la adopción por presión externa no genera cambio cultural duradero. Mapear qué escuelas mantuvieron los avances puede revelar las condiciones que hacen sostenible el cambio.'},
+{ico:'🔒',nm:'Seguridad Digital como Contenido Pedagógico',
+desc:'Educar en seguridad en línea emerge como oportunidad curricular concreta; el robo físico de equipos también inhibe la inversión tecnológica.',
+citas:[{t:'"Hay tantos riesgos en todo el mundo a jóvenes; en educación es un buen punto para apoyarlos y a los padres a quedar seguros en línea."',s:'G2 · Educadores'},{t:'"La preocupación de seguridad era importante: hace dos años personas entraron a la escuela para robar."',s:'G2 · Educadores'}],
+grupos:['G2 · Educadores'],
+why:'La seguridad digital tiene doble cara: virtual (proteger a jóvenes en internet) y física (proteger los equipos). Ninguna aparece en currículos formales. Incluirlas convierte un obstáculo en contenido pedagógico.'},
+{ico:'🧠',nm:'Salud Mental y Plataformas Digitales',
+desc:'Plataformas digitales generaron mejor respuesta que la atención presencial para temas de salud mental con jóvenes donde el estigma impide buscar ayuda cara a cara.',
+citas:[{t:'"Los jóvenes lo tomaron como una oportunidad de poder hablar sobre temas que no les gusta hablar uno a uno."',s:'G2 · Educadores'},{t:'"Interactuar con una plataforma de salud mental tuvimos mejor respuesta; para mí fue un aprendizaje grande."',s:'G2 · Educadores'}],
+grupos:['G2 · Educadores'],
+why:'Los jóvenes aceptan hablar de salud mental a través de plataformas cuando no lo harían presencialmente. Señala que la tecnología puede reducir barreras de acceso a servicios esenciales, no solo educativos.'},
+{ico:'⚙️',nm:'Robótica para el Pensamiento Emprendedor',
+desc:'La robótica educativa desarrolla pensamiento analítico y emprendedor desde la infancia, más allá de la programación técnica.',
+citas:[{t:'"Promover la robótica en todos los niveles educativos porque desarrolla capacidades de análisis e interpretación desde pequeñito."',s:'G4 · Alumnos'},{t:'"Los alumnos están siendo formados para ser trabajadores, no para ser emprendedores; la tecnología puede aportar al cambio de mentalidad."',s:'G4 · Alumnos'}],
+grupos:['G4 · Alumnos'],
+why:'La robótica aparece como vía concreta para cerrar la brecha entre educación informativa y formativa. Su mención desde alumnos —no de expertos— sugiere que hay demanda estudiantil real de este tipo de aprendizaje activo.'},
+{ico:'🔄',nm:'Sostenibilidad del Conocimiento ante la Movilidad',
+desc:'Las comunidades forman a referentes tecnológicos que luego emigran por becas, matrimonio o trabajo. El conocimiento se va con las personas.',
+citas:[{t:'"Alguien es súper pilas pero se va de la comunidad, o consiguió una beca y se va, o incluso migra para trabajar; esa sostenibilidad y transferencia es un obstáculo."',s:'G1 · Coordinadores'},{t:'"No solo que haya un referente pila, sino que tengamos muchos referentes pilas."',s:'G1 · Coordinadores'}],
+grupos:['G1 · Coordinadores'],
+why:'La movilidad de cuadros técnicos es un problema sistémico de organizaciones rurales que raramente aparece en los análisis de tecnología educativa. Diseñar para redundancia —no para el genio individual— es una consideración crítica.'},
+{ico:'🛡️',nm:'Seguridad Física del Equipamiento',
+desc:'El miedo a que los equipos se dañen, sean robados o deterioren durante el transporte disuade a los docentes de asumir responsabilidad sobre ellos.',
+citas:[{t:'"Prefieren no asumir esa responsabilidad: tengo que viajar en moto, si llueve el polvo se me cae; prefieren no asumir esa consecuencia."',s:'G3 · Educadores'},{t:'"La preocupación de seguridad era importante: hace dos años personas entraron a la escuela para robar."',s:'G2 · Educadores'}],
+grupos:['G2 · Educadores','G3 · Educadores'],
+why:'La seguridad física del equipamiento es una razón no pedagógica que bloquea la adopción y rara vez aparece en los análisis. Requiere soluciones de infraestructura y seguros, no solo de formación.'},
+{ico:'🤝',nm:'Alianzas Estratégicas como Puente de Acceso',
+desc:'Hay organizaciones proveen apps con contenido descargable que funciona offline, reduciendo la barrera de conectividad sin esperar al Estado.',
+citas:[{t:'"Project Alianza provee tecnología a los niños, con acceso a casi 200 libros; solo necesita descargar la aplicación y luego no más Internet."',s:'G6 · Liderazgos'},{t:'"Estamos haciendo muchas alianzas con otras organizaciones que proveen diagnósticos y otras herramientas."',s:'G6 · Liderazgos'}],
+grupos:['G1 · Coordinadores','G6 · Liderazgos'],
+why:'Las alianzas con soluciones offline son una respuesta pragmática a la brecha de infraestructura que no depende de resolver primero la conectividad. Están siendo desarrolladas de forma dispersa y sin sistematización.'},
+{ico:'🎯',nm:'Segmentación como Condición de Análisis',
+desc:'Antes de identificar intereses u obstáculos, es necesario definir el segmento al que va dirigida la intervención. Sin segmentación, los diagnósticos se mezclan y las soluciones se vuelven genéricas.',
+citas:[{t:'"Los intereses va a depender qué segmento estamos enfocados, porque no podemos iniciar con la ayuda si no sabemos a quién va la ayuda."',s:'G6 · Liderazgos'},{t:'"Al tener ya ubicado el segmento, vamos a ubicar los obstáculos a qué nos vamos a enfrentar."',s:'G6 · Liderazgos'}],
+grupos:['G6 · Liderazgos'],
+why:'Este es el único momento en las 6 transcripciones donde alguien hace una observación metacognitiva sobre el proceso de diagnóstico. Señala una capacidad analítica que podría aplicarse sistemáticamente en el ecosistema para priorizar intervenciones.'},
+];
+
+// ─── RENDER CONSTRUCTS ───────────────────────────────────────────────────────
+function renderC(){
+  const grid=document.getElementById('cg');
+  const pColors={coord:'var(--cc)',lid:'var(--cl)',educ:'var(--ce)',alum:'var(--ca)'};
+  const pNames={coord:'Coord',lid:'Lid',educ:'Educ',alum:'Alum'};
+  const pKeys=['coord','lid','educ','alum'];
+  const pLabels=['C','L','E','A'];
+  grid.innerHTML=C.map(c=>{
+    const featured=c.citas.slice(0,2).map(q=>`<div class="cc-cita">${q.t}<span class="cs">${q.p==='coord'?'G1·Coord':q.p==='lid'?'G6·Lid':q.p==='educ'?'Educ (G2/G3)':'Alum (G4/G5)'}</span></div>`).join('');
+    const allQ=c.citas.map(q=>{
+      const col=pColors[q.p];
+      const src=q.p==='coord'?'G1 · Coordinadores':q.p==='lid'?'G6 · Liderazgos':q.p==='educ'?'G2 o G3 · Educadores':'G4 o G5 · Alumnos';
+      return `<div class="aq" style="border-color:${col};background:${col}10">"${q.t}" <span class="aqg" style="color:${col}">${src}</span></div>`;
+    }).join('');
+    const dots=pKeys.map((k,i)=>`<span><span class="dot ${c.persp[i]?'':'off'}" style="${c.persp[i]?'background:'+pColors[k]:''}"></span>${pLabels[i]}</span>`).join('');
+    const badge=c.cons===100?`<span class="cc-badge b100">100% Total</span>`:c.cons===75?`<span class="cc-badge b75">75% Alto</span>`:`<span class="cc-badge b50">50% Parcial</span>`;
+    return `<div class="cc fi">
+      <div class="cc-ico">${c.ico}</div>
+      <div class="cc-nm">${c.n}. ${c.nm}</div>
+      <div class="cc-meta">${badge}<span class="cc-freq">${c.freq} menciones · score ${(c.freq*(c.cons/100)).toFixed(1)}</span></div>
+      <div class="cc-def">${c.def}</div>
+      ${featured}
+      <div class="pdots">${dots}</div>
+      <button class="cite-btn" onclick="toggleCites(this)">🗣 Ver todas las citas (${c.citas.length})</button>
+      <div class="all-q">${allQ}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── RENDER WEAK SIGNALS ─────────────────────────────────────────────────────
+function renderWS(){
+  document.getElementById('sg').innerHTML=WS.map(s=>{
+    const qs=s.citas.map(q=>`<div class="sdq">${q.t}<span class="cs">${q.s}</span></div>`).join('');
+    const gs=s.grupos.map(g=>`<span class="sg-tag">${g}</span>`).join('');
+    return `<div class="sdc fi">
+      <div class="sdi">${s.ico}</div>
+      <div class="sdn">${s.nm}</div>
+      <div class="sdd">${s.desc}</div>
+      ${qs}
+      <div class="sdgs">${gs}</div>
+      <div class="sdw"><strong>¿Por qué importa?</strong> ${s.why}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── TOGGLE CITES ────────────────────────────────────────────────────────────
+function toggleCites(btn){
+  const panel=btn.nextElementSibling;
+  const open=panel.classList.toggle('open');
+  btn.classList.toggle('open',open);
+  const n=btn.textContent.match(/\d+/)[0];
+  btn.textContent=open?`▲ Cerrar citas (${n})`:`🗣 Ver todas las citas (${n})`;
+}
+
+// ─── ACCORDION / TAB / PREGUNTA ──────────────────────────────────────────────
+function toggleAcc(h){h.nextElementSibling.classList.toggle('open');}
+function switchTab(p){
+  document.querySelectorAll('.tab-p').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(x=>x.classList.remove('active'));
+  document.getElementById('tab-'+p).classList.add('active');
+  document.querySelector('[data-p="'+p+'"]').classList.add('active');
+}
+function togglePq(h){
+  const b=h.nextElementSibling,a=h.querySelector('.pqa');
+  b.classList.toggle('open');a.classList.toggle('open');
+}
+
+// ─── INTERSECTION OBSERVER ───────────────────────────────────────────────────
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+      e.target.querySelectorAll&&e.target.querySelectorAll('.br-f').forEach(b=>b.style.width=b.getAttribute('data-w')+'%');
+    }
+  });
+},{threshold:.1});
+
+// ─── HEATMAP (4 cols: Coord, Lid, Educ, Alum) ────────────────────────────────
+function drawHeatmap(){
+  const cv=document.getElementById('heatmap');if(!cv)return;
+  const ctx=cv.getContext('2d');
+  const rows=['Infraestruc.','Potencial','Analfab.','Apropiación','Resistencia','Cap.Familiar','Curricular','Vacío IA','Discapacidad'];
+  const cols=['Coord','Lid','Educ','Alum'];
+  const colColors=['#d86c27','#b50544','#b5bb51','#006d86'];
+  // data[row][col]: Coord G1, Lid G6, Educ G2+G3, Alum G4+G5
+  const data=[
+    [5,3,7,10],  // C1 Infraestructura
+    [4,3,5,10],  // C5 Potencial
+    [3,4,9,2],   // C2 Analfabetismo
+    [2,3,5,5],   // C3 Apropiación
+    [4,3,7,0],   // C4 Resistencia
+    [2,6,0,5],   // C6 Capital Familiar
+    [0,3,3,5],   // C7 Desalineación
+    [4,0,3,1],   // C8 Vacío IA
+    [0,0,3,4],   // C9 Discapacidad
+  ];
+  const maxV=10,mL=78,mT=26,cW=70,cH=25;
+  ctx.clearRect(0,0,cv.width,cv.height);
+  cols.forEach((c,j)=>{
+    ctx.textAlign='center';ctx.font='bold 9px Montserrat,sans-serif';ctx.fillStyle=colColors[j];
+    ctx.fillText(c,mL+j*cW+cW/2,16);
+  });
+  rows.forEach((r,i)=>{
+    ctx.textAlign='right';ctx.font='9.5px Open Sans,sans-serif';ctx.fillStyle='#555';
+    ctx.fillText(r,mL-4,mT+i*cH+cH/2+3);
+    data[i].forEach((v,j)=>{
+      const intensity=v/maxV;
+      const [r2,g2,b2]=j===0?[216,108,39]:j===1?[181,5,68]:j===2?[181,187,81]:[0,109,134];
+      ctx.fillStyle=`rgba(${r2},${g2},${b2},${0.08+intensity*0.75})`;
+      if(ctx.roundRect){ctx.beginPath();ctx.roundRect(mL+j*cW+3,mT+i*cH,cW-6,cH-2,4);ctx.fill();}
+      else{ctx.fillRect(mL+j*cW+3,mT+i*cH,cW-6,cH-2);}
+      ctx.fillStyle=intensity>0.4?'#fff':'#333';
+      ctx.textAlign='center';ctx.font='bold 9px Montserrat,sans-serif';
+      ctx.fillText(v===0?'':v,mL+j*cW+cW/2,mT+i*cH+cH/2+3);
+    });
+  });
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+renderC();renderWS();
+window.addEventListener('load',()=>{
+  drawHeatmap();
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>
